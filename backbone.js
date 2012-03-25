@@ -1096,7 +1096,7 @@
       if (!History.started) return false;
       if (!options || options === true) options = {trigger: options};
       var frag = (fragment || '').replace(routeStripper, '');
-      if (this.fragment == frag) return;
+      if (this.fragment == frag && !options.allowSame) return;
 
       // If pushState is available, we use it to set the fragment as a real URL.
       if (this._hasPushState) {
